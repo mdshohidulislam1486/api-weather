@@ -12,13 +12,16 @@
 <body>
     <h2 class="fs-1 fw-900  text-center text-success mt-5">Know weather by city name</h2>
      <!-- button seciotn  -->
+
      <section>
         <div class="input-group mb-3 w-50 mx-auto mt-5">
-            <input id='search' type="text" class="form-control" placeholder="Enter search city name">
-            <button onclick="loadSearch()" class="btn btn-secondary outline-none" type="button" id="search-button"><i class="fas fa-search"></i></button>
+            <input id='search' type="text" class="form-control" placeholder="Search city">
+            <button onclick="serchByCityNmae()" class="btn btn-secondary outline-none" type="button" id="search-button"><i class="fas fa-search"></i></button>
           </div>    
-    </section>
-
+     </section>
+     <section >
+         <div id='current-weather' class="d-flex justify-content-center align items-center">This is  weather</div>
+     </section>
 
     <script src="script.js"></script>
     <!-- JavaScript Bundle with Popper -->
