@@ -11,7 +11,7 @@ const serchByCityNmae = () =>{
     .then(res => res.json())
     .then(data => dispalyWeather(data))
 
-    url1 = (`https://openweathermap.org/data/2.5/find?q=dhaka&appid=439d4b804bc8187953eb36d2a8c26a02&units=metric`);
+    url1 = (`https://openweathermap.org/data/2.5/find?q=${searchValue}&appid=439d4b804bc8187953eb36d2a8c26a02&units=metric`);
   fetch(url1)
   .then(res1 => res1.json())
   .then(data1 => getCityName(data1.list))
@@ -19,10 +19,11 @@ const serchByCityNmae = () =>{
 
 const getCityName =cityCounts =>{
 for(const city of cityCounts){
-  console.log(city)
+ console.log(city)
 }
   
 }
+
 
 document.getElementById('search').addEventListener('keyup', function(){
   const search =document.getElementById('search').value;
