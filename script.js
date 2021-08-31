@@ -10,7 +10,28 @@ const serchByCityNmae = () =>{
     fetch(url)
     .then(res => res.json())
     .then(data => dispalyWeather(data))
+
+    url1 = (`https://openweathermap.org/data/2.5/find?q=dhaka&appid=439d4b804bc8187953eb36d2a8c26a02&units=metric`);
+  fetch(url1)
+  .then(res1 => res1.json())
+  .then(data1 => getCityName(data1.list))
 }
+
+const getCityName =cityCounts =>{
+for(const city of cityCounts){
+  console.log(city)
+}
+  
+}
+
+document.getElementById('search').addEventListener('keyup', function(){
+  const search =document.getElementById('search').value;
+  if(search.toLowerCase() === ('Dhaka').toLocaleLowerCase()){
+    console.log("key is up")
+  }
+ 
+})
+
 
 // kelvin convert function 
 
@@ -49,4 +70,4 @@ div.innerHTML =`
 `
 getMainDipaly.appendChild(div)
 }
-}
+} 
