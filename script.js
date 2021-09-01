@@ -4,25 +4,26 @@ const serchByCityNmae = () =>{
     const search = document.getElementById('search');
     const searchValue = search.value;
     search.value ='';
-    url = (`https://api.openweathermap.org/data/2.5/weather?q=${searchValue},${searchValue},${searchValue}&appid=22b1c6b38ac2a4ba41cfc34612e67570
+   /*  url = (`https://api.openweathermap.org/data/2.5/weather?q=${searchValue},${searchValue},${searchValue}&appid=22b1c6b38ac2a4ba41cfc34612e67570
 
     `)
     fetch(url)
     .then(res => res.json())
-    .then(data => dispalyWeather(data))
+    .then(data => dispalyWeather(data)) */
 
     url1 = (`https://openweathermap.org/data/2.5/find?q=${searchValue}&appid=439d4b804bc8187953eb36d2a8c26a02&units=metric`);
   fetch(url1)
   .then(res1 => res1.json())
-  .then(data1 => getCityName(data1.list))
+  .then(data1 => disPlayCityName(data1.list))
 }
 
-const getCityName =cityCounts =>{
+const disPlayCityName =cityCounts =>{
 for(const city of cityCounts){
  console.log(city)
 }
   
 }
+
 
 
 document.getElementById('search').addEventListener('keyup', function(){
@@ -44,7 +45,8 @@ const temConvert=(kelvin)=>{
   return result;
 }
 
-const dispalyWeather= cities =>{
+
+/* const dispalyWeather= cities =>{
 const getMainDipaly = document.getElementById('current-weather');
 getMainDipaly.innerHTML = '';
 const cityName = cities.name;
@@ -71,4 +73,4 @@ div.innerHTML =`
 `
 getMainDipaly.appendChild(div)
 }
-} 
+}  */
