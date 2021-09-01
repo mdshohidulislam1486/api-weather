@@ -18,8 +18,16 @@ const serchByCityNmae = () =>{
 }
 
 const disPlayCityName =cityCounts =>{
+const getMainDipaly = document.getElementById('table');
+getMainDipaly.innerHTML= '';
 for(const city of cityCounts){
- console.log(city)
+  const div = document.createElement('tbody');
+  div.innerHTML =`
+                  <tr>
+                    <td>${city.name}, ${city.sys.country}</td>
+                  </tr>
+  `
+  getMainDipaly.appendChild(div)
 }
   
 }
