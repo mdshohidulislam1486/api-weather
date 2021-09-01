@@ -8,6 +8,11 @@
     <!-- CSS only -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
     <title>Weather</title>
+    <style>
+        #list{
+            cursor: pointer;
+        }
+    </style>
 </head>
 <body>
     <h2 class="fs-1 fw-900  text-center text-success mt-5">Know weather by city name</h2>
@@ -21,7 +26,7 @@
      </section>
      <section >
          <div id='current-weather' class="d-flex justify-content-center flex-column align-items-center">
-            <table id='table' class="table table-success table-striped  table-hover w-50"> 
+            <table id='table' class="table table-success table-striped d-inline table-hover w-50"> 
             </table>
              
          </div>

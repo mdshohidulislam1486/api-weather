@@ -4,43 +4,27 @@ const serchByCityNmae = () =>{
     const search = document.getElementById('search');
     const searchValue = search.value;
     search.value ='';
-   /*  url = (`https://api.openweathermap.org/data/2.5/weather?q=${searchValue},${searchValue},${searchValue}&appid=22b1c6b38ac2a4ba41cfc34612e67570
-
-    `)
-    fetch(url)
-    .then(res => res.json())
-    .then(data => dispalyWeather(data)) */
-
+   
     url1 = (`https://openweathermap.org/data/2.5/find?q=${searchValue}&appid=439d4b804bc8187953eb36d2a8c26a02&units=metric`);
   fetch(url1)
   .then(res1 => res1.json())
   .then(data1 => disPlayCityName(data1.list))
 }
 
-const disPlayCityName =cityCounts =>{
-const getMainDipaly = document.getElementById('table');
-getMainDipaly.innerHTML= '';
-for(const city of cityCounts){
-  const div = document.createElement('tbody');
-  div.innerHTML =`
-                  <tr>
-                    <td>${city.name}, ${city.sys.country}</td>
-                  </tr>
-  `
-  getMainDipaly.appendChild(div)
-}
-  
+
+const detailsFetch=()=>{
+  const search = document.getElementById('search');
+  const searchValue = search.value;
+  search.value ='';
+  url = (`https://api.openweathermap.org/data/2.5/weather?q=${searchValue},${searchValue},${searchValue}&appid=22b1c6b38ac2a4ba41cfc34612e67570
+
+  `)
+  fetch(url)
+  .then(res => res.json())
+  .then(data => dispalyWeather(data))
 }
 
 
-
-document.getElementById('search').addEventListener('keyup', function(){
-  const search =document.getElementById('search').value;
-  if(search.toLowerCase() === ('Dhaka').toLocaleLowerCase()){
-    console.log("key is up")
-  }
- 
-})
 
 
 // kelvin convert function 
@@ -54,7 +38,7 @@ const temConvert=(kelvin)=>{
 }
 
 
-/* const dispalyWeather= cities =>{
+const dispalyWeather= cities =>{
 const getMainDipaly = document.getElementById('current-weather');
 getMainDipaly.innerHTML = '';
 const cityName = cities.name;
@@ -81,4 +65,20 @@ div.innerHTML =`
 `
 getMainDipaly.appendChild(div)
 }
-}  */
+}  
+
+
+const disPlayCityName =cityCounts =>{
+  const getMainDipaly = document.getElementById('table');
+  getMainDipaly.innerHTML= '';
+  for(const city of cityCounts){
+    const div = document.createElement('tbody');
+    div.innerHTML =`
+                    <tr>
+                      <td id='list' onclick='detailsFetch()'>${city.name}, ${city.sys.country}</td>
+                    </tr>
+    `
+    getMainDipaly.appendChild(div)
+  }
+    
+  }
